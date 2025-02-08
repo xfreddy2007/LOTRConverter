@@ -89,13 +89,15 @@ struct ContentView: View {
           Spacer()
           Button {
             showExcahngeInfo.toggle()
-            print("showExcahngeInfo value: \(showExcahngeInfo)")
           } label: {
             Image(systemName: "info.circle.fill")
               .font(.largeTitle)
               .foregroundStyle(.white)
           }
           .padding(.trailing)
+          .sheet(isPresented: $showExcahngeInfo) {
+            ExchangeInfo()
+          }
         }
       }
     }
